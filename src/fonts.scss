@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overlock:wght@400;900&display=swap");
+$display-font: "Overlock", cursive;
+$main-font: "Ubuntu", sans-serif;
+
+.header-padding {
+  margin-top: 3.25rem;
+}
+.p-16-regular {
+  font-size: 1rem;
+}
+.p-20-regular {
+  font-size: 1.25rem;
+}
+.p-20-italic {
+  font-size: 1.25rem;
+  font-variant: italic;
+}
+.p-25-regular {
+  font-size: 1.563rem;
+}
+
+.p-31-bold {
+  font-size: 1.953rem;
+  font-weight: bold;
+}
+h1 {
+  margin: 1.5rem 0;
+  font-size: 3.4375rem;
+  font-weight: normal;
+  line-height: 3.4375rem;
+  font-family: $display-font;
+}
+h2 {
+  font-size: 5.96rem;
+  font-weight: bolder;
+  line-height: 9rem;
+  font-family: $display-font;
+  background: $pink-gradient-light;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-size: 1.563rem;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}

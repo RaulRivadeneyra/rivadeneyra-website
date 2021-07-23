@@ -1,0 +1,38 @@
+$min-page-width: 800px;
+$max-page-width: 1500px;
+
+%spread {
+  display: flex;
+  justify-content: space-between;
+}
+%center {
+  display: flex;
+  justify-content: center;
+}
+
+.full_screen {
+  width: 100%;
+  height: 100vh;
+}
+
+.page_container {
+  width: 100%;
+  &-center {
+    @extend .page_container;
+    @extend %center;
+  }
+}
+
+.page_minmax_size {
+  min-width: $min-page-width;
+  width: 100%;
+  max-width: $max-page-width;
+  &-spread {
+    @extend .page_minmax_size;
+    @extend %spread;
+  }
+}
+
+.page_padding {
+  padding: 0 150px;
+}
