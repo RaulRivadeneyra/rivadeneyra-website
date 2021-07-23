@@ -1,6 +1,5 @@
 <template>
   <div class="navbar page_container-center">
-    <div class="background" />
     <div class="container page_minmax_size-spread">
       <div class="signature p-20-regular">
         <router-link :to="{ name: 'Home' }">Rivadeneyra</router-link>
@@ -35,13 +34,5 @@ export default {
 }
 .middle-links > * {
   padding: 0rem 1rem;
-}
-.background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  background: white;
-  fill: url(#gradient);
 }
 </style>
