@@ -1,13 +1,29 @@
 <template>
   <NavBar />
-  <router-view class="header-padding" />
+  <router-view class="view" />
+  <Footer />
 </template>
 
 <script>
 import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
+import $ from "jquery";
 export default {
   components: {
     NavBar,
+    Footer,
+  },
+  mounted: () => {
+    $(document).on("click", 'a[href^="#"]', function (event) {
+      event.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: $($.attr(this, "href")).offset().top,
+        },
+        1000
+      );
+    });
   },
 };
 </script>
@@ -63,7 +79,13 @@ a:active {
   background: $pink-gradient-light;
   margin: 0;
 }
+
 .btn-primary:hover {
   box-shadow: 0px 0px 10px 0.05px #0000005b;
+}
+.view {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 </style>

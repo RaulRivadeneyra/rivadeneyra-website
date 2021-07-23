@@ -1,5 +1,5 @@
 <template>
-  <div class="gradient"></div>
+  <div id="gradient" class="gradient"></div>
 </template>
 
 <script>

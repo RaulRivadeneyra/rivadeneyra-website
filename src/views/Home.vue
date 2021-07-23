@@ -1,27 +1,27 @@
 <template>
-  <div class="home" style="margin-top: 0">
+  <div class="home">
     <Hero />
-    <svg
-      width="100%"
-      height="106"
-      viewBox="0 0 1440 106"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none"
-      class="ramp"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M21.2476 0.327952C9.73364 -0.391652 0 8.75251 0 20.289V106H1439.92C1439.06 96.2564 1431.19 88.4492 1421.25 87.8279L21.2476 0.327952Z"
-        fill="#FCFCFD"
-      />
-    </svg>
+    <div class="spacer" style="width: 100%; height: 100vh" />
     <div class="wrapper">
-      <div
-        class="page_container-center"
-        style="background: #fcfcfd; position: absolute z-index: 5;"
-      >
+      <div class="ramp_container">
+        <svg
+          width="100%"
+          height="106"
+          viewBox="0 0 1440 106"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          class="ramp"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M21.2476 0.327952C9.73364 -0.391652 0 8.75251 0 20.289V106H1439.92C1439.06 96.2564 1431.19 88.4492 1421.25 87.8279L21.2476 0.327952Z"
+            fill="#FCFCFD"
+          />
+        </svg>
+      </div>
+      <div class="page_container-center">
         <div class="content page_minmax_size-spread page_padding">
           <h2>Projects</h2>
           <div class="cards">
@@ -67,28 +67,31 @@ export default {
 <style scoped>
 .home {
   display: block;
+  height: auto;
 }
 .ramp {
-  position: absolute;
-  z-index: 5;
   width: 100%;
+  position: absolute;
   min-width: none;
   background-size: cover;
   background-repeat: no-repeat;
+  top: -104px;
   height: 106px;
-  bottom: -5px;
   background-image: url("../assets/content-ramp.png");
+}
+.ramp_container {
+  position: absolute;
+  width: 100%;
+  height: 1px;
 }
 .content {
   flex-direction: column;
-  z-index: 5;
-  background: #fcfcfd;
 }
 
 .wrapper {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
+  display: block;
+  height: 100%;
   background: #fcfcfd;
+  padding-bottom: 106px;
 }
 </style>

@@ -48,6 +48,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.hero {
+  position: fixed;
+  z-index: -1;
+}
 .background {
   position: absolute;
   top: 0;
