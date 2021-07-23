@@ -17,31 +17,33 @@
         fill="#FCFCFD"
       />
     </svg>
-    <div
-      class="page_container-center"
-      style="background: #fcfcfd; position: absolute z-index: 5;"
-    >
-      <div class="content page_minmax_size-spread page_padding">
-        <h2>Projects</h2>
-        <div class="cards">
-          <BigCard
-            :align="'left'"
-            :imageName="'KayAppDisplay.png'"
-            :title="'KayApp'"
-            :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
-          />
-          <BigCard
-            :align="'right'"
-            :imageName="'EdensDisplay.png'"
-            :title="'Eden\'s Garden'"
-            :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
-          />
-          <BigCard
-            :align="'left'"
-            :imageName="'ObioDisplay.png'"
-            :title="'Obio Digital'"
-            :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
-          />
+    <div class="wrapper">
+      <div
+        class="page_container-center"
+        style="background: #fcfcfd; position: absolute z-index: 5;"
+      >
+        <div class="content page_minmax_size-spread page_padding">
+          <h2>Projects</h2>
+          <div class="cards">
+            <BigCard
+              :align="'left'"
+              :imageName="'KayAppDisplay.png'"
+              :title="'KayApp'"
+              :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
+            />
+            <BigCard
+              :align="'right'"
+              :imageName="'EdensDisplay.png'"
+              :title="'Eden\'s Garden'"
+              :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
+            />
+            <BigCard
+              :align="'left'"
+              :imageName="'ObioDisplay.png'"
+              :title="'Obio Digital'"
+              :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -82,15 +84,11 @@ export default {
   z-index: 5;
   background: #fcfcfd;
 }
-.container {
-  margin: 0;
-  align-items: center;
-  margin: 0rem 0rem;
-  max-width: 200%;
-  display: flex;
-  justify-content: space-between;
-}
-BigCard {
-  margin: 10rem 0;
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  background: #fcfcfd;
 }
 </style>
