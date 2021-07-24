@@ -49,6 +49,7 @@ export default {
   padding-bottom: 3rem;
 }
 .ramp {
+  z-index: 4;
   width: 100%;
   position: absolute;
   min-width: none;

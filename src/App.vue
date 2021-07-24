@@ -1,16 +1,13 @@
 <template>
-  <NavBar />
   <router-view class="view" />
   <Footer />
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import $ from "jquery";
 export default {
   components: {
-    NavBar,
     Footer,
   },
   mounted: () => {

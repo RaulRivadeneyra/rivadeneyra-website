@@ -49,8 +49,8 @@ export default {
 
 <style scoped lang="scss">
 .hero {
-  position: fixed;
-  z-index: -1;
+  //position: fixed;
+  z-index: 0;
 }
 .background {
   position: absolute;
@@ -85,11 +85,11 @@ img {
 }
 
 .fixed-area {
-  position: fixed;
+  //position: fixed;
   display: flex;
   justify-content: center;
   width: 100%;
-  z-index: 0;
+  z-index: 5;
   top: 0;
   left: 0;
   height: 100vh;

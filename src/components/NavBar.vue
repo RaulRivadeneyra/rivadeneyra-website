@@ -24,8 +24,8 @@ export default {
 
 <style scoped lang="scss">
 .navbar {
-  position: fixed;
-  z-index: 1;
+  position: absolute;
+  z-index: 3;
   top: 0;
   left: 0;
 }

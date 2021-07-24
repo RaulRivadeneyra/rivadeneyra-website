@@ -9,7 +9,6 @@ export default {};
 <style scoped lang="scss">
 .gradient {
   background-color: #e7e7f7;
-  background-image: #ffffff;
   background-image: radial-gradient(
       at 5% 85%,
       hsla(194, 49%, 85%, 1) 0,

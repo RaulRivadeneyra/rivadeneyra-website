@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <Hero />
+    <Parallax :ratio="0.2" :zPos="0"> <NavBar /><Hero /></Parallax>
+
     <div class="spacer" style="width: 100%; height: 100vh" />
+
     <div class="wrapper">
       <div class="ramp_container">
         <svg
@@ -54,12 +56,15 @@
 // @ is an alias to /src
 import Hero from "@/components/Hero.vue";
 import BigCard from "@/components/BigCard.vue";
-
+import Parallax from "@/components/Parallax.vue";
+import NavBar from "@/components/NavBar.vue";
 export default {
   name: "Home",
   components: {
     Hero,
     BigCard,
+    Parallax,
+    NavBar,
   },
 };
 </script>
@@ -67,10 +72,11 @@ export default {
 <style scoped>
 .home {
   display: block;
-  height: auto;
+  width: 100%;
 }
 .ramp {
   width: 100%;
+  z-index: 4;
   position: absolute;
   min-width: none;
   background-size: cover;
@@ -80,17 +86,21 @@ export default {
   background-image: url("../assets/content-ramp.png");
 }
 .ramp_container {
+  z-index: 4;
   position: absolute;
   width: 100%;
   height: 1px;
 }
 .content {
+  z-index: 4;
   flex-direction: column;
 }
 
 .wrapper {
+  z-index: 4;
+  position: relative;
+  width: 100%;
   display: block;
-  height: 100%;
   background: #fcfcfd;
   padding-bottom: 106px;
 }
