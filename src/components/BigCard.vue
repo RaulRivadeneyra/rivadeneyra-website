@@ -28,6 +28,7 @@
 <script>
 export default {
   name: "BigCard",
+
   props: {
     align: {
       validator(value) {

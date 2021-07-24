@@ -39,27 +39,28 @@ p {
   font-size: 1rem;
 }
 $green-color: #7bf48f;
+$black-color: rgb(0, 0, 0);
 $orange-color: #f4c47b;
 $red-color: #f47b7b;
 .green {
   &:before,
   &::after {
     background-color: $green-color;
-    box-shadow: 0 0 8px $green-color;
+    box-shadow: 0 0 1px 1.5px $black-color;
   }
 }
 .orange {
   &:before,
   &::after {
     background-color: $orange-color;
-    box-shadow: 0 0 8px $orange-color;
+    box-shadow: 0 0 1px 1.5px $black-color;
   }
 }
 .red {
   &:before,
   &::after {
     background-color: $red-color;
-    box-shadow: 0 0 8px $red-color;
+    box-shadow: 0 0 1px 1.5px $black-color;
   }
 }
 
@@ -67,7 +68,7 @@ $red-color: #f47b7b;
   position: absolute;
   width: 10px;
   height: 10px;
-
+  transform: translate(3px, 1px);
   &:after {
     content: "";
     position: absolute;
@@ -77,7 +78,7 @@ $red-color: #f47b7b;
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    animation: pulse-dot 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+    animation: pulse-dot 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
   }
 }
 

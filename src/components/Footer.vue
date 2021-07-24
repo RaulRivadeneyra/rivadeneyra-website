@@ -27,6 +27,35 @@
         <p class="p-31-light text" style="color: #fcfcfd">
           Auctor sed pharetra euismod pellentesque. Consectetur donec nec.
         </p>
+        <div class="contact_links">
+          <a href="https://www.linkedin.com/in/rivadeneyra/">
+            <img
+              alt="LinkedIn"
+              src="@/assets/LinkedInLogo.png"
+              width="50"
+              height="50
+            "
+            />
+          </a>
+          <a href="https://github.com/RaulRivadeneyra">
+            <img
+              alt="Github"
+              src="@/assets/GithubLogo.png"
+              width="50"
+              height="50
+            "
+            />
+          </a>
+          <a href="mailto:raul@rivadeneyra.me">
+            <img
+              alt="Email"
+              src="@/assets/MailLogo.png"
+              width="50"
+              height="50
+            "
+            />
+          </a>
+        </div>
       </div>
     </div>
     <div class="copyright page_container-center">
@@ -70,5 +99,14 @@ export default {
 .copyright {
   background: #304f6e;
   padding: 1rem 0;
+}
+.contact_links {
+  width: 100%;
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
+  a {
+    margin: 0 2rem;
+  }
 }
 </style>
