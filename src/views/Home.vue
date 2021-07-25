@@ -4,7 +4,7 @@
 
     <div class="spacer" style="width: 100%; height: 100vh" />
 
-    <div class="wrapper">
+    <div id="project" class="wrapper">
       <div class="ramp_container">
         <svg
           width="100%"
@@ -23,31 +23,77 @@
           />
         </svg>
       </div>
-      <div class="page_container">
-        <section class="projects page_item">
-          <h2>Projects</h2>
-          <div class="project_cards">
-            <ProjectPeek
-              :align="'left'"
-              :imageName="'KayAppDisplay.png'"
-              :title="'KayApp'"
-              :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
-            />
-            <ProjectPeek
-              :align="'right'"
-              :imageName="'EdensDisplay.png'"
-              :title="'Eden\'s Garden'"
-              :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
-            />
+      <div class="site_container">
+        <div class="page_container page_max_size">
+          <section class="projects page_item">
+            <h2>Projects</h2>
+            <div class="project_cards">
+              <ProjectPeek
+                :align="'left'"
+                :imageName="'KayAppDisplay.png'"
+                :title="'KayApp'"
+                :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
+              />
+              <ProjectPeek
+                :align="'right'"
+                :imageName="'EdensDisplay.png'"
+                :title="'Eden\'s Garden'"
+                :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
+              />
 
-            <ProjectPeek
-              :align="'left'"
-              :imageName="'ObioDisplay.png'"
-              :title="'Obio Digital'"
-              :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
-            />
-          </div>
-        </section>
+              <ProjectPeek
+                :align="'left'"
+                :imageName="'ObioDisplay.png'"
+                :title="'Obio Digital'"
+                :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="footer wrapper">
+      <div class="site_container">
+        <div class="information page_container page_max_size">
+          <section class="contact page_item">
+            <h2>Hit me up</h2>
+            <p class="p-31-light text" style="color: #fcfcfd">
+              Auctor sed pharetra euismod pellentesque. Consectetur donec nec.
+            </p>
+            <div class="contact_links">
+              <a href="https://www.linkedin.com/in/rivadeneyra/">
+                <img
+                  alt="LinkedIn"
+                  src="@/assets/LinkedInLogo.png"
+                  width="50"
+                  height="50
+            "
+                />
+              </a>
+              <a href="https://github.com/RaulRivadeneyra">
+                <img
+                  alt="Github"
+                  src="@/assets/GithubLogo.png"
+                  width="50"
+                  height="50
+            "
+                />
+              </a>
+              <a href="mailto:raul@rivadeneyra.me">
+                <img
+                  alt="Email"
+                  src="@/assets/MailLogo.png"
+                  width="50"
+                  height="50
+            "
+                />
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="copyright page_container page_max_size">
+        <p class="page_item" style="color: #fcfcfd">© 2021 Raúl Rivadeneyra</p>
       </div>
     </div>
   </div>
@@ -88,7 +134,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .home {
   display: block;
   width: 100%;
@@ -102,7 +148,15 @@ export default {
   top: -104px;
   height: 106px;
   background-image: url("../assets/content-ramp.png");
+  margin-bottom: -1px;
+  stroke: transparent;
+  stroke-width: 0px;
 }
+.copyright {
+  background: #304f6e;
+  padding: 1rem 0;
+}
+
 .ramp_container {
   z-index: 4;
   position: absolute;
@@ -123,18 +177,114 @@ export default {
   padding-bottom: 106px;
 }
 
-.projects {
-  display: grid;
-  grid-gap: 1rem;
-}
 .project_cards {
   display: grid;
   grid-auto-rows: auto;
   grid-gap: 4rem;
 }
-@media only screen and (max-width: 1100px) {
+.footer {
+  padding-bottom: 0px;
+  background: #fcfcfd;
+  .site_container {
+    background: #2a3d4f;
+
+    border-radius: 20px 20px 0 0;
+    padding-top: 3rem;
+  }
+}
+.information {
+  padding-bottom: 4rem;
+}
+.contact {
+  h2 {
+    font-size: 3.052rem;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+  }
+}
+.text {
+  max-width: 750px;
+}
+
+.contact_links {
+  width: 100%;
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
+  a {
+    margin: 0 2rem;
+  }
+}
+$tablet-width: 1000px;
+@media only screen and (max-width: $tablet-width) {
+  .projects {
+    h2 {
+      font-size: 3.815rem;
+    }
+  }
+  .contact {
+    h2 {
+      line-height: inherit;
+      font-size: 1.953rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  .information {
+    padding-bottom: 2rem;
+  }
+  .contact_links {
+    a {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+$phone-width: 450px;
+@media only screen and (max-width: $phone-width) {
   .projects {
     text-align: center;
+    h2 {
+      line-height: inherit;
+      font-size: 3.815rem;
+    }
+  }
+  #project {
+    padding-bottom: 2rem;
+  }
+  .text {
+    max-width: 100%;
+  }
+  .contact {
+    text-align: center;
+    h2 {
+      line-height: inherit;
+      font-size: 1.953rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  .copyright {
+    p {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+  .information {
+    padding-bottom: 2rem;
+  }
+  .contact_links {
+    a {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 }
 </style>

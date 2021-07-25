@@ -1,40 +1,17 @@
 <template>
-  <div class="navbar">
-    <router-link class="p-20-regular left" :to="{ name: 'Home' }"
-      >Rivadeneyra</router-link
-    >
-    <div v-if="hasSpace" class="middle-links p-20-regular center">
-      <router-link :to="{ name: 'Work' }">Work</router-link>
-      <router-link :to="{ name: 'About' }">About me</router-link>
-      <a href="#contact">Contact</a>
+  <div class="site_container">
+    <div class="navbar page_max_size">
+      <router-link class="p-20-regular left" :to="{ name: 'Home' }"
+        >Rivadeneyra</router-link
+      >
+      <a class="p-20-regular right" href=""><em>Resume</em></a>
     </div>
-    <a v-if="hasSpace" class="p-20-regular right" href=""><em>Resume</em></a>
-    <a v-if="!hasSpace" class="p-20-regular right" href=""><em>Menu</em></a>
   </div>
 </template>
 
 <script>
-import $ from "jquery";
-import { ref } from "vue";
 export default {
   name: "NavBar",
-  setup() {
-    const space = ref($(window).width());
-    return {
-      space,
-    };
-  },
-  computed: {
-    hasSpace() {
-      return this.space > 800 ? true : false;
-    },
-  },
-  mounted() {
-    let _this = this;
-    window.addEventListener("resize", function () {
-      _this.space = $(window).width();
-    });
-  },
 };
 </script>
 
@@ -46,19 +23,9 @@ export default {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-areas: "left center right";
-  .middle-links {
-    margin: auto;
-    * {
-      padding: 0rem 1rem;
-    }
-  }
   .right {
     text-align: right;
     grid-area: right;
-  }
-  .center {
-    text-align: center;
-    grid-area: center;
   }
   .left {
     text-align: left;

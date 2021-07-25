@@ -1,15 +1,10 @@
 <template>
   <router-view class="view" />
-  <Footer />
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
 import $ from "jquery";
 export default {
-  components: {
-    Footer,
-  },
   mounted: () => {
     $(document).on("click", 'a[href^="#"]', function (event) {
       event.preventDefault();
@@ -84,5 +79,14 @@ a:active {
   position: relative;
   width: 100%;
   height: auto;
+}
+
+$tablet-width: 1000px;
+@media only screen and (max-width: $tablet-width) {
+  .btn-primary {
+    font-size: 0.8rem;
+    padding: 3px 15px;
+    margin: 5px 1px;
+  }
 }
 </style>

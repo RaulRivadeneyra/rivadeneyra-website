@@ -48,12 +48,14 @@ export default {
     grid-area: info;
     margin: auto;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
     button {
       margin: auto;
+      margin-top: 0.5rem;
     }
   }
   img {
+    width: 100%;
     grid-area: img;
     border-radius: 20px;
   }
@@ -68,14 +70,35 @@ export default {
   grid-template-areas: "info img";
 }
 
-@media only screen and (max-width: 1100px) {
+$phone-width: 450px;
+$tablet-width: 1000px;
+@media only screen and (max-width: $tablet-width) {
+  .information {
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+    button {
+      margin-top: 0px;
+    }
+  }
+}
+
+@media only screen and (max-width: $phone-width) {
   .project_peek {
-    grid-gap: 30px;
-    grid-template-rows: 2fr 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "img" "info";
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5rem;
     .information {
       text-align: center;
+      h3 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 1.563rem;
+      }
     }
     img {
       margin: auto;

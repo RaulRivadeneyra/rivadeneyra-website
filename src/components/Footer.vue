@@ -78,15 +78,17 @@ export default {
   padding-bottom: 3rem;
 }
 .ramp {
-  z-index: 4;
   width: 100%;
+  z-index: 4;
   position: absolute;
-  min-width: none;
   background-size: cover;
   background-repeat: no-repeat;
   top: -104px;
   height: 106px;
   background-image: url("../assets/content-ramp.png");
+  margin-bottom: -1px;
+  stroke: transparent;
+  stroke-width: 0px;
 }
 .text {
   max-width: 750px;

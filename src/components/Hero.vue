@@ -1,24 +1,29 @@
 <template>
   <DynamicBackground class="full_screen background" />
-  <div class="page_container full_screen">
-    <div class="content page_item">
-      <div class="information">
-        <div class="greeting">
-          <p class="p-25-regular">Hi! I'm Raúl Rivadeneyra ✌🏽</p>
-          <Availability :color="'green'" :text="'Available for new projects'" />
+  <div class="site_container">
+    <div class="page_container full_screen page_max_size">
+      <div class="content page_item">
+        <div class="information">
+          <div class="greeting">
+            <p class="p-25-regular">Hi! I'm Raúl Rivadeneyra ✌🏽</p>
+            <Availability
+              :color="'green'"
+              :text="'Available for new projects'"
+            />
+          </div>
+          <h1>
+            I create <strong>experiences</strong> that
+            <strong>help people</strong> reach their dreams
+          </h1>
+          <p class="p-25-regular">
+            Sodales fermentum vulputate at egestas tortor pellentesque. Sed
+            tempus nibh tincidunt ac. Integer diam id ac porttitor. Habitant non
+            odio et aliquam urna in imperdiet convallis et.
+          </p>
+          <button class="btn-primary">About me</button>
         </div>
-        <h1>
-          I create <strong>experiences</strong> that
-          <strong>help people</strong> reach their dreams
-        </h1>
-        <p class="p-25-regular">
-          Sodales fermentum vulputate at egestas tortor pellentesque. Sed tempus
-          nibh tincidunt ac. Integer diam id ac porttitor. Habitant non odio et
-          aliquam urna in imperdiet convallis et.
-        </p>
-        <button class="btn-primary">Know more</button>
+        <img v-if="hasSpace" src="@/assets/profile-image.png" alt="" />
       </div>
-      <img v-if="hasSpace" src="@/assets/profile-image.png" alt="" />
     </div>
   </div>
 </template>
@@ -82,6 +87,7 @@ export default {
   }
   img {
     grid-area: img;
+    margin: auto;
   }
 }
 
