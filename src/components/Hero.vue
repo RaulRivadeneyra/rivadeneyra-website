@@ -1,36 +1,24 @@
 <template>
-  <div class="hero full_screen">
-    <div class="fixed-area">
-      <DynamicBackground class="full_screen background" />
-      <div class="page_container-center">
-        <div class="content_container page_minmax_size-spread page_padding">
-          <div class="information">
-            <div class="text">
-              <p class="p-25-regular">Hi! I'm Raúl Rivadeneyra ✌🏽</p>
-              <Availability
-                :color="'green'"
-                :text="'Available for new projects'"
-              />
-              <h1>
-                I create <strong>experiences</strong> that
-                <strong>help people</strong> reach their dreams
-              </h1>
-
-              <p class="p-25-regular">
-                Sodales fermentum vulputate at egestas tortor pellentesque. Sed
-                tempus nibh tincidunt ac. Integer diam id ac porttitor. Habitant
-                non odio et aliquam urna in imperdiet convallis et.
-              </p>
-            </div>
-            <div class="center">
-              <button class="btn-primary">Know more</button>
-            </div>
-          </div>
-          <div class="image">
-            <img src="@/assets/profile-image.png" alt="" />
-          </div>
+  <DynamicBackground class="full_screen background" />
+  <div class="page_container full_screen">
+    <div class="content page_item">
+      <div class="information">
+        <div class="greeting">
+          <p class="p-25-regular">Hi! I'm Raúl Rivadeneyra ✌🏽</p>
+          <Availability :color="'green'" :text="'Available for new projects'" />
         </div>
+        <h1>
+          I create <strong>experiences</strong> that
+          <strong>help people</strong> reach their dreams
+        </h1>
+        <p class="p-25-regular">
+          Sodales fermentum vulputate at egestas tortor pellentesque. Sed tempus
+          nibh tincidunt ac. Integer diam id ac porttitor. Habitant non odio et
+          aliquam urna in imperdiet convallis et.
+        </p>
+        <button class="btn-primary">Know more</button>
       </div>
+      <img v-if="hasSpace" src="@/assets/profile-image.png" alt="" />
     </div>
   </div>
 </template>
@@ -38,68 +26,69 @@
 <script>
 import Availability from "@/components/Availability.vue";
 import DynamicBackground from "@/components/DynamicBackground.vue";
+import { ref } from "vue";
+import $ from "jquery";
 export default {
   name: "Hero",
   components: {
     Availability,
     DynamicBackground,
   },
+  setup() {
+    const space = ref($(window).width());
+    return {
+      space,
+    };
+  },
+  computed: {
+    hasSpace() {
+      return this.space > 1250 ? true : false;
+    },
+  },
+  mounted() {
+    let _this = this;
+    window.addEventListener("resize", function () {
+      _this.space = $(window).width();
+    });
+  },
 };
 </script>
 
 <style scoped lang="scss">
-.hero {
-  //position: fixed;
-  z-index: 0;
-}
 .background {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -4;
 }
-.content_container {
-  align-items: center;
-}
-
-$outer-padding: 5%;
-$inner-padding: 1.5rem;
 
 .information {
-  max-width: 48rem;
-  display: flex;
-  padding-right: $inner-padding;
-  flex-direction: column;
-  vertical-align: middle;
-}
-img {
-  padding-left: $inner-padding;
+  display: grid;
+  grid-gap: 1.5rem;
+  button {
+    margin: auto;
+  }
 }
 
-.center {
-  display: flex;
+.content {
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  height: auto;
+  grid-gap: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "info img";
+  .information {
+    grid-area: info;
+  }
+  img {
+    grid-area: img;
+  }
 }
 
-.fixed-area {
-  //position: fixed;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  height: 100vh;
-}
-
-.container {
-  display: flex;
-  min-width: 800px;
-  width: 100%;
-  max-width: 1400px;
-  justify-content: center;
+@media only screen and (max-width: 1250px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "info";
+  }
 }
 </style>

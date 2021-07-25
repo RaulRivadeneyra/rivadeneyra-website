@@ -1,3 +1,6 @@
+$phone-max-width: 1000px;
+
+
 $min-page-width: 800px;
 $max-page-width: 1500px;
 
@@ -16,15 +19,15 @@ $max-page-width: 1500px;
 }
 
 .page_container {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
   width: 100%;
-  &-center {
-    @extend .page_container;
-    @extend %center;
-  }
+}
+.page_item {
+  grid-column: 2;
 }
 
 .page_minmax_size {
-  min-width: $min-page-width;
   width: 100%;
   max-width: $max-page-width;
   &-spread {

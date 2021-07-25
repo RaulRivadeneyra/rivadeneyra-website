@@ -23,30 +23,31 @@
           />
         </svg>
       </div>
-      <div class="page_container-center">
-        <div class="content page_minmax_size-spread page_padding">
+      <div class="page_container">
+        <section class="projects page_item">
           <h2>Projects</h2>
-          <div class="cards">
-            <BigCard
+          <div class="project_cards">
+            <ProjectPeek
               :align="'left'"
               :imageName="'KayAppDisplay.png'"
               :title="'KayApp'"
               :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
             />
-            <BigCard
+            <ProjectPeek
               :align="'right'"
               :imageName="'EdensDisplay.png'"
               :title="'Eden\'s Garden'"
               :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
             />
-            <BigCard
+
+            <ProjectPeek
               :align="'left'"
               :imageName="'ObioDisplay.png'"
               :title="'Obio Digital'"
               :description="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pretium rhoncus lectus tristique.'"
             />
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </div>
@@ -55,16 +56,34 @@
 <script>
 // @ is an alias to /src
 import Hero from "@/components/Hero.vue";
-import BigCard from "@/components/BigCard.vue";
+import ProjectPeek from "@/components/ProjectPeek.vue";
 import Parallax from "@/components/Parallax.vue";
 import NavBar from "@/components/NavBar.vue";
+import $ from "jquery";
 export default {
   name: "Home",
   components: {
     Hero,
-    BigCard,
+    ProjectPeek,
     Parallax,
     NavBar,
+  },
+  setup() {
+    var width = $(window).width();
+    return {
+      width,
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.myEventHandler);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.myEventHandler);
+  },
+  methods: {
+    myEventHandler() {
+      this.width = $(window).width();
+    },
   },
 };
 </script>
@@ -78,7 +97,6 @@ export default {
   width: 100%;
   z-index: 4;
   position: absolute;
-  min-width: none;
   background-size: cover;
   background-repeat: no-repeat;
   top: -104px;
@@ -103,5 +121,20 @@ export default {
   display: block;
   background: #fcfcfd;
   padding-bottom: 106px;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 1rem;
+}
+.project_cards {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 4rem;
+}
+@media only screen and (max-width: 1100px) {
+  .projects {
+    text-align: center;
+  }
 }
 </style>
